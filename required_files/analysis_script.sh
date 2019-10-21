@@ -45,8 +45,7 @@ fi
 GENOME=$WKDIR/required_files/Mus_musculus.GRCm38.dna.chromosome.19.fa.gz
 FEATURES=$WKDIR/required_files/Mus_musculus.GRCm38.98.chr.worRNA.chr19.gtf
 ADAPT1=$(cat $WKDIR/required_files/config_file.txt | grep Read1: | cut -d ":" -f 2)
-#ADAPT2=$(cat $WKDIR/required_files/config_file.txt | grep Read2: | cut -d ":" -f 2) # uncomment this for paired-end data
-#rRNA=$WKDIR/required_files/Ca_A22chrAM_rRNAloci.bed
+ADAPT2=$(cat $WKDIR/required_files/config_file.txt | grep Read2: | cut -d ":" -f 2) # uncomment this for paired-end data
 mkdir $WKDIR/QC
 PICARD=$WKDIR/required_files/picard.jar
 
