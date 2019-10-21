@@ -1,0 +1,3 @@
+Enter adapter sequences (Illumina TrueSeq adapters are listed by default):
+Read1:AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+Read2:AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
