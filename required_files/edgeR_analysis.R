@@ -27,7 +27,7 @@ head(d$counts)
 keep <- filterByExpr(d) ### from edgeR manual
 d <- d[keep, , keep.lib.sizes=FALSE]
 d <- calcNormFactors(d) # this calculates the normalization factors used during the diffrential expression analysis
-plotMDS(d, col=sample_info$replicate) # plot leading fold changes - to get an idea if data have batch effects
+plotMDS(d, col=as.numeric(d$samples$group)) # plot leading fold changes - to get an idea if data have batch effects
 
 # Uncomment the next 3 lines for exporting the MDS plot
 #png(filename = "MDSplot.png", res = 300, width = 1920, height = 1440)
