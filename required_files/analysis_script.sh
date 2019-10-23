@@ -5,7 +5,7 @@
 FILES=$(pwd)
 WKDIR=$(echo $FILES | sed 's:/required_files::g')
 
-read -p 'Do you want to retrieve genomic data from the CGD? (yes or no): ' GENEDATA
+read -p 'Do you want to retrieve genomic data from Ensembl? (yes or no): ' GENEDATA
 
 # Ask for raw data file format
 
