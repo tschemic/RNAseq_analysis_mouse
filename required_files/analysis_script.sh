@@ -25,7 +25,7 @@ then
 	echo 'Retrieving genomic data from Ensembl.'
 	
 	wget ftp://ftp.ensembl.org/pub/release-98/gtf/mus_musculus/Mus_musculus.GRCm38.98.chr.gtf.gz ## downloads annotation file
-	zcat Mus_musculus.GRCm38.98.chr.gtf.gz | grep -v 'gene_biotype "rRNA"' | gzip > Mus_musculus.GRCm38.98.chr.worRNA.gtf.gz
+	zcat Mus_musculus.GRCm38.98.chr.gtf.gz | egrep -v 'gene_biotype "(Mt_)?rRNA"' | gzip > Mus_musculus.GRCm38.98.chr.worRNA.gtf.gz
 	
 	#for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 X Y MT
 	#do
