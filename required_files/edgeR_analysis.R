@@ -10,6 +10,8 @@ pval_adjust <- "BH"  # set method for p-value adjustment for multiple testing (=
 cutoff <- c(-1,1)  # set log2 fold change line in plots (e.g. "c(-1,1)" means lines will be drawn at 2-fold up and down)
 
 ########## Import count data #######################################################################
+# Modify the supplied Targets.txt file by entering the file names of the .crop.txt files in column one, the group name of the corresponding sample (e.g. WT) in column 2, the time point in column 3 (if no time points were done add t0 in all rows) and the replicate number in column 4. The file must be tab separated.
+
 sample_info <- read.delim("Targets.txt")
 targets <- data.frame(files = sample_info$files, group = paste0(sample_info$group, sample_info$time),
                       description = paste0(sample_info$group, sample_info$time, "_", sample_info$replicate))
