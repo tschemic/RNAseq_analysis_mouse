@@ -168,6 +168,6 @@ do
 	head -n -5 $i > $i.crop.txt  # clear count files for flags
 done
 
-cp $WKDIR/*.crop.txt $WKDIR/diff_expr_analysis
+cp $WKDIR/count/*.crop.txt $WKDIR/diff_expr_analysis
 cp $FILES/edgeR_analysis.R $WKDIR/diff_expr_analysis
 cp $FILES/Targets.txt $WKDIR/diff_expr_analysis
