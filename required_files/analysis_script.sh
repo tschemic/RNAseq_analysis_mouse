@@ -27,23 +27,23 @@ then
 	wget ftp://ftp.ensembl.org/pub/release-98/gtf/mus_musculus/Mus_musculus.GRCm38.98.chr.gtf.gz ## downloads annotation file
 	zcat Mus_musculus.GRCm38.98.chr.gtf.gz | egrep -v 'gene_biotype "(Mt_)?rRNA"' | gzip > Mus_musculus.GRCm38.98.chr.worRNA.gtf.gz
 	
-	#for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 X Y MT
-	#do
-	#	wget ftp://ftp.ensembl.org/pub/release-98/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.chromosome.$i.fa.gz ## downloads DNA sequences for all chromosomes
-	#done
-	#for i in *.fa.gz; do gunzip $i; done
-	#cat *.fa | gzip > Mus_musculus.GRCm38.dna.chromosomes.fa.gz
-	#rm *.fa
+	for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 X Y MT
+	do
+		wget ftp://ftp.ensembl.org/pub/release-98/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.chromosome.$i.fa.gz ## downloads DNA sequences for all chromosomes
+	done
+	for i in *.fa.gz; do gunzip $i; done
+	cat *.fa | gzip > Mus_musculus.GRCm38.dna.chromosomes.fa.gz
+	rm *.fa
 
-	wget ftp://ftp.ensembl.org/pub/release-98/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.chromosome.19.fa.gz ## downloads DNA sequences for chromosome 19
+	#wget ftp://ftp.ensembl.org/pub/release-98/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.chromosome.19.fa.gz ## downloads DNA sequences for chromosome 19 for test pruposes only
 
 else
 	echo 'No genomic data are retrieved.'
 fi
 
 
-GENOME=$WKDIR/required_files/Mus_musculus.GRCm38.dna.chromosome.19.fa.gz
-FEATURES=$WKDIR/required_files/Mus_musculus.GRCm38.98.chr.worRNA.chr19.gtf.gz
+GENOME=$WKDIR/required_files/Mus_musculus.GRCm38.dna.chromosomes.fa.gz
+FEATURES=$WKDIR/required_files/Mus_musculus.GRCm38.98.chr.worRNA.gtf.gz
 ADAPT1=$(cat $WKDIR/required_files/config_file.txt | grep Read1: | cut -d ":" -f 2)
 ADAPT2=$(cat $WKDIR/required_files/config_file.txt | grep Read2: | cut -d ":" -f 2) # uncomment this for paired-end data
 mkdir $WKDIR/QC
