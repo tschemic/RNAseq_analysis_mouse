@@ -3,7 +3,8 @@ Primary data analysis of RNAseq data from Mus musculus
 
 Script for analysis of RNAseq data obtained from Mus musculus. This script is used in the Kuchler lab (http://cdl.univie.ac.at/) at MFPL (https://www.mfpl.ac.at/de.html).
 
-This repository conatains a pipeline for the primary analysis of Illumina short read sequencing RNAseq data (single-end) obtained from mouse samples. It includes the retrieval of genomic data required for analysis from Ensembl (https://www.ensembl.org/index.html), quality control of the raw data, trimming and mapping of reads and counting the number of reads mapping to genes. Only the RNAseq raw data in .bam or .fastq format (compressed or uncompressed) have to be provided by the user.
+This repository conatains a pipeline for the primary analysis of Illumina short read sequencing RNAseq data (single-end) obtained from mouse samples. It includes the retrieval of genomic data required for analysis from Ensembl (https://www.ensembl.org/index.html), quality control of the raw data, trimming and mapping of reads and counting the number of reads mapping to genes. Only the RNAseq raw data in .bam or .fastq format (compressed or uncompressed) have to be provided by the user. A chromosome 19 annotation file (.gtf file) is included for test purposes only.
+
 Tools required for analysis:
 
 samtools (http://www.htslib.org/)
